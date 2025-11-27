@@ -30,3 +30,6 @@ D:\2025.09~2025.12\INFO49635-Capstone\CellarS.Backend\CellarS.Api\obj\Debug\net8
 D:\2025.09~2025.12\INFO49635-Capstone\CellarS.Backend\CellarS.Api\obj\Debug\net8.0\CellarS.Api.pdb
 D:\2025.09~2025.12\INFO49635-Capstone\CellarS.Backend\CellarS.Api\obj\Debug\net8.0\CellarS.Api.genruntimeconfig.cache
 D:\2025.09~2025.12\INFO49635-Capstone\CellarS.Backend\CellarS.Api\obj\Debug\net8.0\ref\CellarS.Api.dll
+D:\2025.09~2025.12\INFO49635-Capstone\CellarS.Backend\CellarS.Api\bin\Debug\net8.0\AWSSDK.BedrockRuntime.dll
+D:\2025.09~2025.12\INFO49635-Capstone\CellarS.Backend\CellarS.Api\bin\Debug\net8.0\AWSSDK.Core.dll
+D:\2025.09~2025.12\INFO49635-Capstone\CellarS.Backend\CellarS.Api\obj\Debug\net8.0\CellarS.Api.sourcelink.json

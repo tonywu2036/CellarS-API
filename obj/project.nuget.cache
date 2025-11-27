@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "jmyTCsAk71I=",
+  "dgSpecHash": "+PLh/nY4Df0=",
   "success": true,
   "projectFilePath": "D:\\2025.09~2025.12\\INFO49635-Capstone\\CellarS.Backend\\CellarS.Api\\CellarS.Api.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Wu Tony\\.nuget\\packages\\awssdk.bedrockruntime\\3.7.420.24\\awssdk.bedrockruntime.3.7.420.24.nupkg.sha512",
+    "C:\\Users\\Wu Tony\\.nuget\\packages\\awssdk.core\\3.7.402.71\\awssdk.core.3.7.402.71.nupkg.sha512",
     "C:\\Users\\Wu Tony\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\Wu Tony\\.nuget\\packages\\microsoft.openapi\\1.6.14\\microsoft.openapi.1.6.14.nupkg.sha512",
     "C:\\Users\\Wu Tony\\.nuget\\packages\\swashbuckle.aspnetcore\\6.6.2\\swashbuckle.aspnetcore.6.6.2.nupkg.sha512",

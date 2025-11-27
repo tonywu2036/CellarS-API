@@ -1,30 +1,49 @@
-using Microsoft.AspNetCore.Mvc;
-using CellarS.Api.Models;
 using CellarS.Api.Services;
+using Microsoft.AspNetCore.Mvc;
 
 namespace CellarS.Api.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
-    public class AIController : ControllerBase
+    [Route("api/ai")]
+    public class AiController : ControllerBase
     {
-        private readonly IRephraseService _rephraseService;
+        private readonly BedrockAiService _aiService;
+        private readonly ILogger<AiController> _logger;
 
-        public AIController(IRephraseService rephraseService)
+        public AiController(BedrockAiService aiService, ILogger<AiController> logger)
         {
-            _rephraseService = rephraseService;
+            _aiService = aiService;
+            _logger = logger;
         }
 
-        [HttpPost("rephrase")]
-        public async Task<ActionResult<RephraseResponse>> RephraseText([FromBody] RephraseRequest request)
+        public class SimplifyRequest
         {
-            if (request == null || string.IsNullOrWhiteSpace(request.Text))
+            public string Text { get; set; } = string.Empty;
+        }
+
+        public class SimplifyResponse
+        {
+            public string SimplifiedText { get; set; } = string.Empty;
+        }
+
+        [HttpPost("simplify")]
+        public async Task<ActionResult<SimplifyResponse>> Simplify([FromBody] SimplifyRequest request)
+        {
+            if (string.IsNullOrWhiteSpace(request.Text))
             {
-                return BadRequest("Text cannot be empty.");
+                return BadRequest("Text is required.");
             }
 
-            var result = await _rephraseService.RephraseTextAsync(request);
-            return Ok(result);
+            try
+            {
+                var simplified = await _aiService.SimplifyAsync(request.Text);
+                return Ok(new SimplifyResponse { SimplifiedText = simplified });
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error calling Bedrock simplify");
+                return StatusCode(500, "Error calling AI service.");
+            }
         }
     }
 }
